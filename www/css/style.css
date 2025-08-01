@@ -1,0 +1,215 @@
+/** allmän css för alla sidor utom små-sidorna **/
+/** vit bakgrundsfärg på webbsidan **/
+body {
+    background-color: white;
+    /** all text har tresbuchet som font **/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+/** alla h2 **/
+h2 {
+    /** centrerad och lite mellanrum längst upp **/
+    text-align: center;
+    margin-top: 7%;
+    font-size: 25px;
+}
+/** klass för att centera element **/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/** sidan användaren är inne på blir aktiv **/
+.active {
+    /** linje under texten **/
+    text-decoration: underline;
+    /** avstånd linjen till texten **/
+    text-underline-offset: 5px;
+    /** tjocklek på linjen **/
+    text-decoration-thickness: 2px;
+    /** färg på linjen **/
+    text-decoration-color:#9d6b53;
+}
+/** alla bilders standardinställningar **/
+img {
+    width: 100%;
+    height: auto;
+}
+
+/** Header **/
+header {
+    /** streck längst ner längs headern **/
+    border-bottom: 1px solid grey;
+    padding-bottom: 2px;
+    /** mellanrum mellan header och innehåll **/
+    margin-bottom: 10px;
+}
+/** frimärksloggan **/
+header img {
+    width: 15%;
+    max-width: 100px;
+    margin-left: 2%;
+}
+/** nav **/
+header a {
+    /** inline så de är på en rad **/
+    display: inline;
+    /** mellanrum mellan länkarna **/
+    padding-left: 30px;
+    /** svart text utan streck **/
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+/** när musen är över länken **/
+header a:hover {
+    color: #774936;
+}
+/** länkarna är till höger **/
+nav {
+    float: right;
+    margin: 1.7% 4% 0 0;
+}
+
+/** streck innan footer **/
+hr {
+    border: solid 1.5px #000000;
+    max-width: 900px;
+}
+/** Footer **/
+/** Nyhetsbrev **/
+.nyhetsbrev {
+    /** underelementen, child-elementen kommer vara relativ till .nyhetsbrev **/
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.nyhetsbrev img {
+    width: 75%;
+    border: solid 3px black;
+    /**
+    första siffran - skugga vänster/höger
+    andra siffran - skugga ovanför/under
+    tredje siffran - hur blurrigt
+    fjärde siffran - hur stor skugga
+    sist färg
+    **/
+    box-shadow: 0 0 15px 7px #ede0d4;
+}
+.nyhetsbrev form {
+    /** underordnas till närmaste ancestor som inte har position static, i detta fall .nyhetsbrev **/
+    position: absolute;
+    top: 66%;
+    left: 34.5%;
+    transform: translate(-50%, -50%);
+}
+.nyhetsbrev input {
+    /** block så att de är under varandra **/
+    display: block;
+    margin-bottom: 8%;
+    padding-left: 10px;
+    width: 25vw;
+    height: 3vh;
+    border: solid 1.5px black;
+    /** rundade hörn **/
+    border-radius: 5px;
+}
+.nyhetsbrev button {
+    /** underordnas också till .nyhetsbrev **/
+    position: absolute;
+    margin-top: 2%;
+    left: 23%;
+    height: 3.5vh;
+    width: 55%;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: #ede0d4;
+    /** animation när den byter färg **/
+    transition: background-color 0.3s ease;
+}
+.nyhetsbrev button:hover {
+    background-color: #ddbea9;
+}
+
+/** Kontakt **/
+.kontakt {
+    /** flexbox för att i större skärmar ska texterna vara bredvid varandra och mindre skärmar under varandra **/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    margin-bottom: 10px;
+}
+/** när muspekare är över **/
+.kontakt a:hover {
+    color: #3F4238;
+}
+.kontakt div {
+    width: 37%;
+}
+/** lilla mail iconen **/
+.kontakt img {
+    width: 3.5%;
+}
+/** bilden längst ner **/ 
+#fot {
+    width: 90%;
+}
+
+/** För mobiler **/
+@media only screen and (max-width: 540px) {
+    h2 {
+        font-size: 19px;
+    }
+    /** Header **/
+    header a {
+        /** närmare varandra och mindre text **/ 
+        padding-left: 7px;
+        font-size: 13px;
+    }
+    /** större bild **/ 
+    header img {
+        width: 25%;
+        margin: 2% 0 0 0;
+    }
+    nav {
+        margin-top: 6.5%;
+    }
+
+    /** Footer **/
+    .nyhetsbrev {
+        margin-top: 0;
+        /** så bilderna inte syns hela vägen utan bara blir förstorade **/ 
+        overflow: hidden;
+    }
+    .nyhetsbrev img {
+        /** nyhetsbrevet förstoras så bara texten är kvar **/ 
+        width: 172%;
+        /** bordern tas bort **/ 
+        border: none;
+    }
+    /** formuläret anpassas **/ 
+    .nyhetsbrev form {
+        top: 67%;
+        left: 50%;
+        border: none;
+    }
+    /** större rutor **/ 
+    .nyhetsbrev input {
+        margin-bottom: 15px;
+        width: 70vw;
+        height: 5vh;
+        padding-left: 10px;
+    }
+    /** större knapp **/ 
+    .nyhetsbrev button {
+        left: 20%;
+        height: 5.5vh;
+        width: 60%;
+    }
+
+    .kontakt div {
+        font-size: 13px;
+        width: 100%;
+    }
+}

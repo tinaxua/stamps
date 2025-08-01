@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- beskrivning på hemsidan -->
+    <meta name="description" content="Event, mässor, tävlingar och allt som händer just nu inom filateli.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hander-just-nu.css">
+    <title>Frimärkswiki</title>
+</head>
+<body>
+    <!-- header med en logga till vänster och de olika undersidorna till höger -->
+    <header>
+        <img alt="logga med frimärke och texten wiki" src="img/logo.webp">
+        <nav>
+            <a href="index.html">Hem</a>
+            <a href="guider.html">Guider</a>
+            <!-- aktiv betyder sidan du är inne på -->
+            <a class="active" href="hander-just-nu.html">Händer just nu</a>
+        </nav>
+    </header>
+    <!-- huvudinnehållet -->
+    <main>
+        <h1>Mässor, tävlingar, event och allt som händer just nu!</h1>
+        <!-- container med innehåll i flexbox -->
+        <div class="container">
+            <!-- varje section är ett event med samma format - "ruta" -->
+            <section class="ruta">
+                <h2>FriMynt 13 april 2024</h2>
+                <p> Frimärks- och myntmässan FriMynt, 13 april 2024 i Helsingborg, är den 48:e internationella myntmässan i ordningen. 
+                    På FriMynt träffas årligen samlare av mynt och frimärken för att umgås och för att sälja och köpa. Frimynt äger rum i Teknikhallen/Olympia. Entré 100 kr.</p>
+            </section>
+
+            <section class="ruta">
+                <h2>Frimung 27 april 2024</h2>
+                <p> Frimung 2024 är en regional vykorts- och frimärksutställning för ungdomar, arrangerad av Sveriges Frimärksungdom, Stockholmsdistriktet. 
+                    Det kommer finnas lotteri, plockbord, billigt material, gåvor till medlemmar, jurybedömd utställning och värderingar. 
+                    Eventet sker lördagen 27 april 2024 kl 11.00-16.00 (prisutdelning 15.40), på Vinjegatan 5 i Blackeberg, Bromma. Fri entré, alla är välkomna!</p>
+            </section>
+
+            <section class="ruta">
+                <h2>Skrivaryd 27 april 2024</h2>
+                <p> Frimärks- och vykortsmässan Skrivaryd kommer hållas klockan 10-15 på Östra Allég. 27, Skillingaryd. 
+                    Det kommer att serveras smörgåsar, kokt korv, kaffe, kakor, te och läsk. 
+                    På mässan kommer runt 15 säljare från Skåne, Småland, Västergötland, Stockholm ställa ut och sälta frimärken, bykort, mynt. Fri entré.</p>
+            </section>
+
+            <section class="ruta">
+                <h2>Nordia 31 maj - 2 juni 2024</h2>
+                <p> Nordia 2024 är en nordisk frimärksmässa och en av de största frimärksutställningarna i Norden sedan Stockholmia 2019. 
+                    Utställningen kommer att hållas 31 maj till 2 juni 2024 i Skjærgårdshallen, Langesund, Norge. 
+                    Frimärksutställningen kommer att ha alla ordinarie klasser och utställare från Danmark, Finland, Island, Norge och Sverige samt från de skandinaviska klubbarna i U.K. och U.S.A.</p>
+            </section>
+
+            <section class="ruta">
+                <h2>HAFNIA 24 17 oktober - 20 oktober 2024</h2>
+                <p> HAFNIA är en europeisk frimärksutställning som anordnas av Copenhagen Philatelic Club (Kjøbenhavns Philatelist Klub - KPK). 
+                    Utställningen äger rum i ”Øksnehallen” i centrala Köpenhamn.
+                    <br>Öppettiderna är:
+                    <br>Torsdag 10/17 kl.12.00-17.00
+                    <br>Fredagen 10/18 kl.10.00-17.00
+                    <br>Lördag 10/19 kl10.00-17.00
+                    <br>Söndag 10/20 kl10:00-15:00
+                </p>
+            </section>
+
+            <section class="ruta">
+                <h2>EuroPhilEx Birmingham 2025</h2>
+                <p> Storbritanniens nästa internationella filatelistutställning kommer hållas från onsdag 7 maj 2025 till söndag 11 maj 2025
+                    i Hall 9 i NEC i Birmingham. Handelsmontrar anordnas och plats har reserverats för över 2000 utställningsramar plus filatelistisk litteraturutställningar. 
+                    Torsdagen den 8 maj hålls Föreningarnas Öppet Dag 2025. Det är en fantastisk chans att marknadsföra din klubb. Läs mer på deras hemsida.</p>
+            </section>
+    </div>
+    </main>
+    <!-- footer -->
+    <footer>
+        <!-- nyhetsbrev, bild + formulär -->
+        <div class="nyhetsbrev">
+            <img alt="bli först att veta! varje månad skickas information om nya event och guider" class="center" src="img/nyhetsbrev.webp">
+            <!-- autocomplete gör att du får upp alternativ under som du fyllt i tidigare och behöver då inte skriva informationen igen -->
+            <form autocomplete="on">
+                <!-- placeholder är vad som står i grå text innan man skriver i något -->
+                <!-- required är att den är obligatorisk, man måste fylla i den för att kunna skicka -->
+                <input type="text" placeholder="Namn" id="namn" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <button type="submit">Skicka</button>
+            </form>
+        </div>
+        <hr>
+        <div class="kontakt center">
+            <div>
+                <p>Har du några frågor eller förslag?<br>Kontakta oss!</p>
+            </div>
+            <div>
+                <img alt="lite iconbild på ett kuvert" src="img/mail.webp">
+                <!-- länk som leder till mail appen (och automatiskt skriver in mailen) när man klickar -->
+                <a href="mailto:frimarkswiki@gmail.com">frimarkswiki@gmail.com</a>
+            </div> 
+        </div>
+        <img alt="övre halvcirkelbågar likt frimärkenas tandning" class="center" id="fot" src="img/footer.webp">
+    </footer>
+</body>
+</html>

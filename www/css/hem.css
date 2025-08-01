@@ -1,0 +1,139 @@
+/** css för sidan "hem" **/ 
+/** Guider **/
+.guider {
+    margin-top: 3%;
+    /** underelementen, child-elementen kommer vara relativ till .guider **/
+    position: relative;
+    width: 100%;
+} 
+.guider button {
+    /** underordnas till närmaste ancestor som inte har position static, i detta fall .guider **/
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    /** centrerar **/
+    transform: translate(-50%, -50%);
+    /** bakgrundsfärg i knappen **/
+    background-color: #B98B73;
+    font-size: 17px;
+    padding: 12px 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    /** animation när knappen ändras, tex hover **/
+    /** ändrar till background-color på 0.3s med ease, startar långsamt, accelererar, och slutar långsamt **/
+    transition: background-color 0.3s ease;
+}
+/** då muspekaren är över knappen i guider **/
+.guider button:hover {
+    background-color: #9d6b53;
+}
+
+/** Fakta **/
+.fakta {
+    /** flexbox, centrerar vertikalt, horisontellt, bryts upp i två rader när elementen inte får plats **/ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 2%;
+}
+.fakta img {
+    width: 300px;
+}
+.fakta p {
+    /** bredd och maxbredd av texten bredvid bilden i fakta delen **/
+    width: 90%;
+    max-width: 530px;
+}
+
+/** Event **/
+.slideshow {
+    /** position fungerar på samma sätt som skrivet längre upp **/
+    position: relative;
+    background: #ede0d4;
+    /** vh är viewport height, 1.5% **/
+    padding: 1.5vh 5px;
+    width: 79%;
+}
+.slide {
+    /** visar först ingen slide, sedan kommer javascripten in och visa upp första sliden **/
+    display: none;
+    padding: 50px;
+    /** centrerad text **/
+    text-align: center;
+}
+
+/** knapp till vänster och höger **/
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    padding: 14px;
+    color: #9d6b53;
+    /** tjockare **/
+    font-weight: bold;
+    font-size: 20px;
+    /** rundade hörn som inte syns eftersom det inte finns någon background color **/
+    /** det gör det däremot när jag håller muspekaren över, se nedan .prev:hover och .next:hover **/
+    border-radius: 7px;
+}
+.prev {
+    margin-left: 2%;
+}
+.next {
+    margin-right: 2%;
+    right: 0;
+}
+/** när muspekare är över blir pilen vit och får en brun bakgrundsfärg **/
+.prev:hover, .next:hover {
+    background-color: #8A5A44;
+    color: white;
+}
+/** hela långa bruna längst ner i slideshowen **/
+.prickar {
+    width: 79%;
+    /** centrerar prickarna **/
+    text-align: center;
+    padding: 5px;
+    background: #9d6b53;
+}
+.prick {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #EDC4B3;
+    /** så rundade hörn att det blir en cirkel **/
+    border-radius: 50%;
+    /** både inline som att element kan vara efter varandra men samtidigt block så man kan välja margin, padding, bredd, höjd **/
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+/** aktiv2 bestäms i javascripten, den sliden som visas **/
+/** pricken som är aktiv får mörkbrun färg, också om man håller muspekaren över en prick **/
+.active2, .prick:hover {
+    background-color: #774936;
+}
+
+/** För mobiler **/
+@media only screen and (max-width: 540px) {
+    .guider button {
+        /** flyttar upp knappen lite så att den inte hamnar för långt nex **/
+        top: 80%;
+        /** mindre text för att passa skärmen **/
+        font-size: 14px;
+        /** mindre knappar **/
+        padding: 8px 20px;
+    }
+    .fakta, p {
+        font-size: 14px;
+        text-align: center;
+    }
+    .fakta img {
+        margin: 0;
+    }
+    .kort-om-filateli {
+        margin-bottom: 0;
+    }
+}

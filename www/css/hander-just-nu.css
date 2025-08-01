@@ -1,0 +1,45 @@
+/** css för sidan "händer just nu" **/
+
+/** all text är centrerad **/ 
+main {
+    margin-top: 7%;
+    text-align: center;
+}
+h1 {
+    font-size: 25px;
+}
+
+/** rutorna använder flexbox **/
+.container {
+    display: flex;
+    /** splittar upp i flera rader när skärmen minskas **/
+    flex-wrap: wrap;
+    /** centrerar horisontellt **/
+    justify-content: center;
+    /** centrerar vertikalt **/
+    align-items: center;
+
+}
+.ruta {
+    background-color: #e8c2ca;
+    padding: 10px;
+    margin: 2%;
+    /** rundade hörn **/
+    border-radius: 40px;
+    max-width: 280px;
+    width: 100%;
+}
+
+/** För mobiler **/
+@media only screen and (max-width: 540px) {
+    /** mindre text **/
+    h1 {
+        font-size: 19px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 14px;
+    }
+}

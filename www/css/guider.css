@@ -1,0 +1,153 @@
+/** css för sidan "guider" **/
+
+/** gör att sidan inte hoppar utan skrollar om det finns en länk till samma sida, fast någon annan del **/
+/** exempelvis på "andra guider" delen **/
+html {
+    scroll-behavior: smooth;
+}
+
+/** Nybörjarguider **/
+.nyborjar-guider img {
+    width: 30%;
+    /** margin för att få mellanrum mellan rutorna **/
+    margin: 5% 7.2%;
+}
+/** diven är båda rutorna tillsammans **/
+/** centrerade i vertikalt och position relative för att knapparna ska kunna vara mitt i bilden **/
+.nyborjar-guider div {
+    text-align: center;
+    position: relative;
+}
+/** tycker det blev snyggare så **/
+.nyborjar-guider h2 {
+    margin-left: 0.5%;
+}
+/** knapparna **/
+#material, #tvatta {
+    position: absolute;
+    top: 70%;
+    left: 27.5%;
+    /** centrerar i förhållande till föräldrarelement/webbläsarfönster **/
+    transform: translate(-50%, -50%);
+    /** knapparnas bakgrundsfärg **/
+    background-color: #b7b7a4;
+    font-size: 17px;
+    /** padding på knapparna **/
+    padding: 1.3% 4%;
+    /** ingen border **/
+    border: none;
+    /** pointer cursor när musen är över knappen **/
+    cursor: pointer;
+    /** rundade hörn **/
+    border-radius: 4px;
+    text-align: center;
+    /** animation när knappen ändras, tex hover **/
+    /** ändrar till background-color på 0.3s med ease, startar långsamt, accelererar, och slutar långsamt **/
+    transition: background-color 0.3s ease;
+}
+/** tvätta knappen ska vara på andra sidan, resten likadant som knappen #material **/
+#tvatta {
+    left: 72.5%;
+}
+/** när jag har musen över knapparna **/
+#tvatta:hover, #material:hover {
+    background-color: #797d62;
+}
+
+/** Andra guider **/
+.container {
+    margin-top: 10px;
+    /** använder css grid **/
+    display: grid;
+    grid-gap: 20px;
+    /** layout, varje bokstav är en grid-area **/ 
+    grid-template-areas: 
+    "m p p p p p p p"
+    "m p p p p p p p";
+    width: 80%;
+}
+/** lilla menyn till vänster (på större skärmar) **/
+/** innefattar också länken till SFU **/
+.container a {
+    color: #274843;
+}
+.container a:hover {
+    color: #735751;
+}
+aside {
+    margin-top: 20%;
+    /** tar upp grid-arean för m i layouten **/
+    grid-area: m;
+    /** endast pickad linje på höger sida **/
+    border-style: none dotted none none;
+    border-width: 3px;
+    border-color: #3f4238;
+    padding-right: 20px;
+}
+aside a {
+    /** block så de är på olika rader **/ 
+    display: block;
+    /** mellanrum längst ned **/ 
+    margin-bottom: 20%;
+}
+/** all annan text får grid-arean för p **/
+.andra-text {
+    grid-area: p;
+}
+fieldset {
+    border: solid 3px #a5a58d;
+    border-radius: 15px;
+}
+/** smårubrikerna **/
+legend {
+    margin-left: 5%;
+    color: #735751;
+}
+fieldset p {
+    margin-top: 0;
+}
+
+/** För mobiler **/
+@media only screen and (max-width: 540px) {
+    /** Nybörjarguider **/
+    .nyborjar-guider img {
+        width: 60%;
+    }
+    /** annorlunda position och textstorlek **/ 
+    #tvatta, #material {
+        font-size: 13px;
+        top: 85%;
+        left: 50%;
+    }
+    #material {
+        top: 35%;
+    }
+
+    /** Andra guider **/
+    .container {
+        /** ändrar layouten **/
+        grid-template-areas: 
+        "m m m m m"
+        "p p p p p";
+        grid-gap: 0px;
+    }
+    aside {
+        /** tar bort bordern **/ 
+        border: none;
+        /** centrerar texten **/ 
+        text-align: center;
+        padding: 0;
+        margin-top: 4%;
+        font-size: 14px;
+    }
+    /** mindre mellanrum **/ 
+    aside a {
+        margin-bottom: 5%;
+    }
+    legend {
+        font-size: 15px;
+    }
+    .container p {
+        font-size: 14px;
+    }
+}

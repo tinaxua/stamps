@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- hemsidans språk: svenska -->
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- beskrivning på hemsidan -->
+    <meta name="description" content="På frimärkswiki finns allt om filateli, både fakta, guider och en samlad sida med allt som händer just nu">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hem.css">
+    <title>Frimärkswiki</title>
+</head>
+<body>
+    <!-- header med en logga till vänster och de olika undersidorna till höger -->
+    <header>
+        <img alt="logga med frimärke och texten wiki" src="img/logo.webp">
+        <nav>
+            <!-- aktiv betyder sidan du är inne på -->
+            <a class="active" href="index.html">Hem</a>
+            <a href="guider.html">Guider</a>
+            <a href="hander-just-nu.html">Händer just nu</a>
+        </nav>
+    </header>
+    <!-- huvudinnehållet -->
+    <main>
+        <!-- bild längst upp med knapp som leder till sidan "guider" -->
+        <figure class="guider center">
+            <img alt="lär dig vilka material som behövs, hur man tvättar frimärken och mer, bakgrundsbild med brev och frimärken" src="img/hem-guider.webp">
+            <!-- när du trycker på knappen går du till action-guider.html -->
+            <form action="guider.html">
+                <button>Läs mer</button>
+            </form>
+        </figure>
+        <!-- första sectionen av sidan med fakta om filateli -->
+        <section class="kort-om-filateli">
+            <h2>Kort om filateli</h2>
+            <div class="fakta">
+                <div>
+                    <img alt="närbild på tre frimärken hållda av en pincett, det översta frimärket är en rosa bild på en kvinna" src="img/kort-om-filateli.webp">
+                </div>
+                <div>
+                    <p class="center">
+                        Filateli är en av världens mest populära hobbyer, det är studiet och samlandet av frimärken och helsaker. 
+                        Några hobbyister samlar på vanliga frimärken, andra samlar på specialutgåvor - som ibland inte är relaterade till posttjänst. 
+                        Även om filateli är nära förknippat med frimärkssamling, är det möjligt att vara filatelist utan att äga några frimärken.
+                        Frimärkssamlande har förekommit i stort sett lika länge som det har funnits frimärken, det vill säga sedan mitten av 1800-talet. 
+                        I början samlades bara stämplade frimärken. Målet var att samla ihop alla märken som över huvud taget givits ut. 
+                        Allteftersom värdet på de äldsta frimärkena steg och postverken gav ut fler frimärken blev det nödvändigt att inrikta samlingen på ett specifikt tema. 
+                        En vanlig sådan inriktning var att samla alla frimärken utgivna av ett visst land. 
+                        Numera är det även vanligt att man begränsar sin samling till en viss tidsperiod i ett lands frimärksutgivning. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- andra sectionen som är en slideshow med event -->
+        <section class="event">
+            <h2>Händer just nu</h2>
+            <div class="slideshow center">
+                <div class="slide">
+                    <h3>FriMynt 13 april 2024</h3>
+                    <p>
+                        Frimärks- och myntmässan FriMynt, 13 april 2024 i Helsingborg, är den 48:e internationella myntmässan i ordningen. 
+                        På FriMynt träffas årligen samlare av mynt och frimärken för att umgås och för att sälja och köpa. 
+                        Frimynt äger rum i Teknikhallen/Olympia. Entré 100 kr.
+                    </p>
+                </div>
+                <div class="slide">
+                    <h3>Frimung 27 april 2024</h3>
+                    <p>
+                        Frimung 2024 är en regional vykorts- och frimärksutställning för ungdomar, arrangerad av Sveriges Frimärksungdom, Stockholmsdistriktet. 
+                        Det kommer finnas lotteri, plockbord, billigt material, gåvor till medlemmar, jurybedömd utställning och värderingar. 
+                        Eventet sker lördagen 27 april 2024 kl 11.00-16.00 (prisutdelning 15.40), på Vinjegatan 5 i Blackeberg, Bromma. Fri entré, alla är välkomna!
+                    </p>
+                </div>
+                <div class="slide">
+                    <h3>Nordia 31 maj - 2 juni 2024</h3>
+                    <p>     
+                        Nordia 2024 är en nordisk frimärksmässa och en av de största frimärksutställningarna i Norden sedan Stockholmia 2019. 
+                        Utställningen kommer att hållas 31 maj till 2 juni 2024 i Skjærgårdshallen, Langesund, Norge. 
+                        Frimärksutställningen kommer att ha alla ordinarie klasser och utställare från Danmark, Finland, Island, Norge och Sverige samt från de skandinaviska klubbarna i U.K. och U.S.A.
+                    </p>
+                </div>
+                <!-- vänster och höger knapparna med javascript som aktiveras när knappen blir tryckt -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <!-- prickar längst ned, byter till respektive slide när man trycker på prickarna -->
+            <div class="prickar center">
+                <span class="prick" onclick="currentSlide(1)"></span>
+                <span class="prick" onclick="currentSlide(2)"></span>
+                <span class="prick" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <footer>
+        <!-- nyhetsbrev, bild + formulär -->
+        <div class="nyhetsbrev">
+            <img alt="bli först att veta! varje månad skickas information om nya event och guider" class="center" src="img/nyhetsbrev.webp">
+            <!-- autocomplete gör att du får upp alternativ under som du fyllt i tidigare och behöver då inte skriva informationen igen -->
+            <form autocomplete="on">
+                <!-- placeholder är vad som står i grå text innan man skriver i något -->
+                <!-- required är att den är obligatorisk, man måste fylla i den för att kunna skicka -->
+                <input type="text" placeholder="Namn" id="namn" autocomplete="on" required>
+                <input type="email" placeholder="Email" id="email" autocomplete="on" required>
+                <button type="submit">Skicka</button>
+            </form>
+        </div>
+        <!-- linje som delar upp -->
+        <hr>
+        <div class="kontakt center">
+            <div>
+                <p>Har du några frågor eller förslag?<br>Kontakta oss!</p>
+            </div>
+            <div>
+                <img alt="lite iconbild på ett kuvert" src="img/mail.webp">
+                <!-- länk som leder till mail appen (och automatiskt skriver in mailen) när man klickar -->
+                <a href="mailto:frimarkswiki@gmail.com">frimarkswiki@gmail.com</a>
+            </div> 
+        </div>
+        <img alt="övre halvcirkelbågar likt frimärkenas tandning" class="center" id="fot" src="img/footer.webp">
+    </footer>
+    <!-- javascript länkat längst ner för att all css och html ska laddas in först -->
+    <script src="js/script.js"></script>
+</body>
+</html>
